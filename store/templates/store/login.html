@@ -1,0 +1,57 @@
+{% extends 'store/base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+
+<div class="col-md-6 col-lg-5">
+
+    <div class="card shadow border-0">
+
+        <div class="card-header bg-dark text-white text-center">
+            <h3 class="mb-0">
+                <i class="bi bi-person-circle"></i>
+                Login
+            </h3>
+        </div>
+
+        <div class="card-body p-4">
+
+            <form method="post">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <div class="d-grid mt-3">
+                    <button type="submit"
+                            class="btn btn-primary btn-lg">
+                        Login
+                    </button>
+                </div>
+
+            </form>
+
+            <hr>
+
+            <p class="text-center mb-0">
+                Don't have an account?
+                <a href="{% url 'register' %}">
+                    Register Here
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+{% endblock %}
